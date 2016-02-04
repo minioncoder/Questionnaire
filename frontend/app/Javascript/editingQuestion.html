@@ -1,0 +1,14 @@
+<div class="click-to-edit">
+   
+    <div ng-hide="view.editorEnabled" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
+        {{value}}
+        <span ng-show="view.hoverEdit" class="animate-show">
+            <i class="glyphicon glyphicon-pencil" ng-click="enableEditor()"></i>
+            <i class="glyphicon glyphicon-trash" data-ng-click="delete(index)"></i>
+        </span>
+    </div>
+    <div ng-show="view.editorEnabled">
+        <textarea type="text" class="form-control" ng-model="view.editableValue"></textarea>
+        <a class="button tiny" ng-click="save(index)">Save</a> 
+    </div>
+</div>

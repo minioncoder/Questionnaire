@@ -22,26 +22,6 @@ angular.module('questionsApp')
             hoverEdit: false
     };
                 
-    $scope.hoverIn = function(){
-          $scope.view.hoverEdit = true;
-    };
-            
-    $scope.hoverOut = function(){
-          $scope.view.hoverEdit = false;
-    };
-                
-    $scope.enableEditor = function(){
-            $scope.view.editorEnabled = true;
-            $scope.view.editableValue = $scope.value;
-//            setTimeout(function(){
-//                $element.find('input')[0].focus();
-//            });
-    };
-                
-    $scope.disableEditor = function(){
-        $scope.view.editorEnabled = false;
-    };
-                
     $scope.save = function(){
         alert($scope.index);
         var t1 = $scope.interviews.indexOf($scope.index);
@@ -73,19 +53,6 @@ angular.module('questionsApp')
     });  
   })
 
-    .directive("clickToEdit", function(){
-        var editorTemplate = '/views/Editor.html';
-        return {
-            restrict: 'A',
-            replace: true,
-            templateUrl: editorTemplate,
-            scope: {
-                value: "=clickToEdit",
-                index: '@'
-            },
-            controller: "Javascript1Ctrl"
-        };
-})
 
 
 

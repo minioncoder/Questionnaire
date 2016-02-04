@@ -10,7 +10,8 @@ app.use(bodyParser.json());
 app.use(function(req, res, next){
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Authorization, Accept');
+    res.header('Access-Control-Allow-Credentials', true);
   next();
 })
 
@@ -36,6 +37,24 @@ app.post('/javascript1', function(req, res){
     });
     mynewTask.save(function(err, mynewTask){
         console.log('Entered function');    
+    });
+    res.json(true);
+});
+
+app.param('task_id', function(req, res, next, taskId){
+    req.db.tasks.findById(taskId, function(err, task){
+        if(err) return next(err);
+        if(!task) return next(new Error('Task not found'));
+        req.task = task;
+        return next();
+    });
+});
+
+app.delete('/javascript1/:_id', function(req, res){
+    console.log(req.params._id);
+    
+    Task.remove({_id: req.params._id}, function(err, result){
+        if (err) throw err;
     });
     res.json(true);
 });

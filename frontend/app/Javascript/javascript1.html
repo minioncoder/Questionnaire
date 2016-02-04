@@ -1,0 +1,21 @@
+
+<div style="padding-left: 0px;">
+    <div class="container">
+        <h2 class="text-center">A list of JavaScript Questions and Answers.</h2>
+ 
+        <div ng-repeat="task in interviews" class="pull-left">             
+        <span style="font-size: 16px; font-text: bold;" click-to-edit="task.questiontext" index="{{$index}}">
+            
+        </span>
+        
+        <span style="font-size: 12px;" click-to-edit="task.Answer" index="{{$index}}"></span>
+            <br/>
+            <br/>
+     </div>
+
+    <input class="form-control" type="textbox" ng-model="question"/><br/>
+    <textarea class="form-control" type="text" ng-model="answer"/><br/>
+    <button class="text-center btn btn-primary" type="submit" ng-click="add()">Add Question</button>
+    <button class="btn btn-success pull-right" type="submit" name="quiz">Quiz</button>
+</div>
+</div>
