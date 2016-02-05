@@ -10,7 +10,7 @@ angular.module('questionsApp')
     return JavascriptService;
     
     function edit(payload){
-       return $http.put(API_URL + 'javascript1/' + payload).success(function(result){
+       return $http.put(API_URL + 'javascript1', payload).success(function(result){
            console.log(result);
        })
     }

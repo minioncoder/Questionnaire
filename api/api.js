@@ -59,21 +59,18 @@ app.delete('/javascript1/:_id', function(req, res){
     res.json(true);
 });
 
-app.put('/javascript1/:_id', function(req, res){
+app.put('/javascript1', function(req, res){
    
-    console.log(req.params._id);
-    Task.findById({_id: req.params._id}, function(err, result){
+    Task.findById({_id: req.body.qid}, function(err, result){
         if(err) throw err;
         console.log("Entered put method");
-        console.log(req.body.questiontext);
-        console.log(req.body.answer);
             result.questiontext = req.body.questiontext;
             result.answer = req.body.answer;
-            result.save(function(err, result){
+            result.save(function(err){
                 if(err) throw err;
-                
                 res.json({message: 'Data Updated'});
             });
+        console.log(result);
     })
     
 });

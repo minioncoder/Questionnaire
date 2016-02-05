@@ -31,20 +31,14 @@ angular.module('questionsApp')
         });
       }
       
-      $scope.edit = function(qid, questiontext, answer){
+      $scope.edit = function(t){
            var uibModalInstance = $uibModal.open({
               templateUrl: 'Javascript/editModal.html',
               controller: 'editQuestionsCtrl',
               size: 'md',
               resolve: {
-                  qId: function(){
-                      return qid;
-                  },
-                  qtext: function(){
-                     return questiontext;
-                  },
-                  atext: function(){
-                     return answer;
+                  t: function(){
+                      return t;
                   }
               }
           });
