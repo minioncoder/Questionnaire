@@ -9,4 +9,4 @@
  * Main module of the application.
  */
 angular
-  .module('questionsApp', ['ui.router', 'ngAnimate']);
+  .module('questionsApp', ['ui.router', 'ngAnimate', 'ui.bootstrap']);

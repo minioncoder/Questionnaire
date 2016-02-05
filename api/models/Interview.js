@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
  
 var interviewSchema = new mongoose.Schema({
     questiontext: {type: String},
-    Answer: {type: String},
+    answer: {type: String},
     hasAnswer: Boolean
 });
 module.exports = mongoose.model('Interview', interviewSchema);

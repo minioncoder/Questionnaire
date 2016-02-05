@@ -32,7 +32,7 @@ app.get('/javascript1', function(req, res, done){
 app.post('/javascript1', function(req, res){
     var mynewTask = new Task({
         questiontext: req.body.questiontext,
-        Answer: req.body.Answer,
+        answer: req.body.answer,
         hasAnswer: true
     });
     mynewTask.save(function(err, mynewTask){
@@ -51,12 +51,31 @@ app.param('task_id', function(req, res, next, taskId){
 });
 
 app.delete('/javascript1/:_id', function(req, res){
-    console.log(req.params._id);
+    //console.log(req.params._id);
     
     Task.remove({_id: req.params._id}, function(err, result){
         if (err) throw err;
     });
     res.json(true);
+});
+
+app.put('/javascript1/:_id', function(req, res){
+   
+    console.log(req.params._id);
+    Task.findById({_id: req.params._id}, function(err, result){
+        if(err) throw err;
+        console.log("Entered put method");
+        console.log(req.body.questiontext);
+        console.log(req.body.answer);
+            result.questiontext = req.body.questiontext;
+            result.answer = req.body.answer;
+            result.save(function(err, result){
+                if(err) throw err;
+                
+                res.json({message: 'Data Updated'});
+            });
+    })
+    
 });
 
 mongoose.connect('mongodb://localhost/Questions');

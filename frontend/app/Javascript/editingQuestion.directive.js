@@ -4,12 +4,14 @@ angular.module('questionsApp')
     .directive('clickToEdit', function(){
         var editorTemplate = 'Javascript/editingQuestion.html';
         return {
-            restrict: 'A',
+            restrict: 'EA',
             replace: true,
             templateUrl: editorTemplate,
             scope: {
-                value: "=clickToEdit",
-                index: '@'
+//                value: "=clickToEdit",
+//                index: '@',
+                datasource: '=',
+                add: '&'
             },
             controller: "editingCtrl"
         };

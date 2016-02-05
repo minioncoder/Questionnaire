@@ -8,7 +8,7 @@ angular.module('questionsApp')
             deleteValue: false,
             hoverEdit: false
     };
-                
+    
     $scope.hoverIn = function(){
           $scope.view.hoverEdit = true;
     };
@@ -24,7 +24,7 @@ angular.module('questionsApp')
 //                $element.find('input')[0].focus();
 //            });
     };
-                
+    
     $scope.disableEditor = function(){
         $scope.view.editorEnabled = false;
     };
@@ -53,4 +53,18 @@ angular.module('questionsApp')
 //            console.log("Deleted Task", res);
 //        });
     }
+     
+    $scope.interviews = [];
+    $scope.addQuestion = function(){
+        
+        $scope.add({questiontext: $scope.question, answer: $scope.answer});
+        
+        $scope.interviews.push({
+            questiontext: $scope.question,
+            answer: $scope.answer,
+        });
+        $scope.question = null;
+        $scope.answer = null;
+    }
+    
 });
