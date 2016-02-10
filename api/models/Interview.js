@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-
  
 var interviewSchema = new mongoose.Schema({
     questiontext: {type: String},

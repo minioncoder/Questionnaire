@@ -1,0 +1,11 @@
+
+<div class="jumbotron">
+<h3> Please choose a Domain </h3>
+    
+    <ul style="list-style-type: none; font-size: 16px;">
+        <li ng-repeat = "p in preparations">
+            <a ui-sref="prepare({id: p._id})">{{p.interviewText}}</a>
+        </li>
+    </ul>
+   <button type="button" class="btn btn-success" value="Add Domain" data-ng-click="addDomain()">Add Domain</button>    
+</div>

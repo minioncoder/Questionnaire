@@ -19,31 +19,18 @@ angular
     })
      .state('html5', {
         url: '/html5',
-        templateUrl: '/views/html5.html'
+        templateUrl: 'Html5/html5.html',
+        controller: 'Html5Ctrl'
     })
-     .state('css1', {
-        url: '/css1',
-        templateUrl: '/views/css1.html'
+     .state('real', {
+        url: '/real',
+        templateUrl: '/real/real.html',
+        controller: 'RealCtrl'
     })
-     .state('angularjs1', {
-        url: '/angularjs1',
-        templateUrl: '/views/angularjs1.html'
+     .state('prepare', {
+        url: '/prepare/:id      ',
+        templateUrl: '/real/prepare.html',
+        controller: 'PrepareCtrl'
     })
-     .state('webapis', {
-        url: '/webapis',
-        templateUrl: '/views/webapis.html'
-    })
-     .state('ef', {
-        url: '/ef',
-        templateUrl: '/views/ef.html'
-    })
-     .state('oops', {
-        url: '/oops',
-        templateUrl: '/views/oops.html'
-    })
-     .state('algos', {
-        url: '/algos',
-        templateUrl: '/views/algos.html'
-    });
 })
 .constant('API_URL', 'http://localhost:3000/');

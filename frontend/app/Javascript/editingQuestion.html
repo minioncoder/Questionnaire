@@ -1,24 +1,10 @@
 <div class="click-to-edit">
-   
-<!--
-    <div ng-hide="view.editorEnabled" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
-        {{value}}
-        <span ng-show="view.hoverEdit" class="animate-show">
-            <i class="glyphicon glyphicon-pencil" ng-click="enableEditor()"></i>
-            <i class="glyphicon glyphicon-trash" data-ng-click="delete(index)"></i>
-        </span>
-    </div>
-    <div ng-show="view.editorEnabled">
-        <textarea type="text" class="form-control" ng-model="view.editableValue"></textarea>
-        <a class="button tiny" ng-click="save(index)">Save</a>
-    </div>
--->
+    
     <div class="container">
         
-<!--        <li ng-repeat="q in interviews">{{q.questionText}}</li>-->
         <input class="form-control" type="textbox" ng-model="question"/><br/>
         <textarea class="form-control" type="text" ng-model="answer"/><br/>
         <button class="btn btn-primary" type="submit" ng-click="addQuestion()">Add Question</button>
-        <button class="btn btn-success pull-right" type="submit" name="quiz">Quiz</button>
+        <button class="btn btn-success pull-right" type="submit" name="quiz" ng-click="takeQuiz()">Quiz</button>
     </div>
 </div>

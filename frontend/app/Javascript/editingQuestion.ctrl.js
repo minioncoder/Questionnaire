@@ -28,33 +28,13 @@ angular.module('questionsApp')
     $scope.disableEditor = function(){
         $scope.view.editorEnabled = false;
     };
-                
-    $scope.save = function(){
-        alert($scope.index);
-//        var t1 = $scope.interviews.indexOf($scope.index);
-//        var t2 = $scope.interviews[$scope.index];
-//        console.log(t2);
-//        $scope.value = $scope.view.editableValue;
-//        var url = API_URL + 'javascript1/' + t2._id;
-//        $http.put(url, $scope.value)
-//            .success(function(data, status){
-//            console.log(data);
-//        })
-        $scope.disableEditor();
-    };
-    
-    $scope.delete = function(index){
-        alert("hello "+index);
-//        $scope.view.deleteValue = true;
-//        var ind = $scope.interviews.splice(index, 1);
-//        var url = API_URL + 'javascript1/' + ind[0]._id;
-//        alert("Do you want to delete for sure?");
-//        $http.delete(url).then(function(res){
-//            console.log("Deleted Task", res);
-//        });
-    }
      
     $scope.interviews = [];
+    
+    $scope.takeQuiz = function(){
+        confirm("Quiz section will be added pretty soon");
+    }
+    
     $scope.addQuestion = function(){
         
         $scope.add({questiontext: $scope.question, answer: $scope.answer});

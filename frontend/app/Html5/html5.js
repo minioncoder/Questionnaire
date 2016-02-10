@@ -1,15 +1,15 @@
 'use strict';
 
 angular.module('questionsApp')
-  .controller('Javascript1Ctrl', function ($scope, $http, 
+  .controller('Html5Ctrl', function ($scope, $http, 
                                             API_URL, $location, $element, $uibModal) {
-    $scope.interviews = [];
+    $scope.htmlinterviews = [];
     
     $scope.addQuestion = function(questiontext, answer){
          var task = {questiontext: questiontext, answer: answer, hasAnswer: true};
         console.log("task is: " + questiontext + "  ans: " + answer);
-        $scope.interviews.push(task);
-        $http.post(API_URL + 'javascript1', task).then(function(res){
+        $scope.htmlinterviews.push(task);
+        $http.post(API_URL + 'html5', task).then(function(res){
             console.log(res);
         });
     }
@@ -23,8 +23,8 @@ angular.module('questionsApp')
     };
     
       $scope.delete = function(index){
-        var ind = $scope.interviews.splice(index, 1);
-        var url = API_URL + 'javascript1/' + ind[0]._id;
+        var ind = $scope.htmlinterviews.splice(index, 1);
+        var url = API_URL + 'html5/' + ind[0]._id;
         alert("Do you want to delete for sure?");
         $http.delete(url).then(function(res){
             console.log("Deleted Task", res);
@@ -33,8 +33,8 @@ angular.module('questionsApp')
       
       $scope.edit = function(t){
            var uibModalInstance = $uibModal.open({
-              templateUrl: 'Javascript/editModal.html',
-              controller: 'editQuestionsCtrl',
+              templateUrl: 'html5/editModal.html',
+              controller: 'editModalCtrl',
               size: 'md',
               resolve: {
                   t: function(){
@@ -47,15 +47,9 @@ angular.module('questionsApp')
           });
       }
    
-      $http.get(API_URL + 'javascript1').success(function(interviews){
-                $scope.interviews = interviews;
+      $http.get(API_URL + 'html5').success(function(htmlinterviews){
+                $scope.htmlinterviews = htmlinterviews;
         }).error(function(err){
             // alert('warning', "Unable to get Q and A", err.message);
         });  
       });
-
-    
-
-
-
-

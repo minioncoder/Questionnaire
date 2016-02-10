@@ -1,9 +1,9 @@
 
 <div style="padding-left: 0px;">
     <div class="container">
-        <h2 class="text-center">A list of JavaScript Questions and Answers.</h2>
+        <h2 class="text-center">A list of HTML Questions and Answers.</h2>
  
-        <ul ng-repeat="t in interviews" style="list-style-type: none;" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
+        <ul ng-repeat="t in htmlinterviews" style="list-style-type: none;" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
             <li style="font-size: 16px; font-text: bold; color: blue;">{{t.questiontext}}</li>
         <span ng-show="hoverEdit" class="animate-show" style="float: right;">
             <i class="glyphicon glyphicon-trash" data-ng-click="delete($index)"></i>
@@ -15,3 +15,4 @@
         <div click-to-edit datasource="interviews" add="addQuestion(questiontext, answer)"></div>
 </div>
 </div>
+
